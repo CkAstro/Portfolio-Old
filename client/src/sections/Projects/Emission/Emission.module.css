@@ -1,0 +1,140 @@
+.imageContainer {
+   composes: imageContainer from '../../index.module.css';
+}
+
+.contentContainer {
+   composes: contentContainer from '../../index.module.css';
+}
+
+.center {
+   composes: center from '../../index.module.css';
+}
+
+.contentContainer__flexSection {
+   composes: contentContainer__flexSection from '../../index.module.css';
+}
+
+@media only screen and (max-width: 600px) {
+   .contentContainer {
+      padding: 30px 0;
+   }
+   .contentContainer h1 {
+      margin: 0 30px;
+   }
+   .contentContainer p {
+      padding: 0 30px;
+      text-align: left;
+   }
+}
+
+/* ----- controller ----- */
+.controllContainer {
+   display: flex;
+   gap: 12px;
+   margin: 0 auto;
+}
+
+.csmButton {
+   cursor: pointer;
+   padding: 6px 12px;
+   background: #bbb;
+   border: 1px solid var(--color-charcoal);
+   text-align: center;
+   transition: all 0.2s;
+}
+
+.csmButton:hover {
+   background: #999;
+}
+
+.valDisplay {
+   /* width: 50px; */
+   width: 135px;
+   padding: 6px 12px;
+}
+
+.valDisplay input {
+   width: 50px;
+   height: 15px;
+}
+
+/* ----- loading bar ----- */
+.canvasContainer {
+   position: relative;
+   width: 500px;
+   height: 400px;
+   margin: 0 auto;
+}
+
+.canvasContainer canvas {
+   position: absolute;
+   width: 500px;
+   height: 400px;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: black;
+   margin: 0 auto;
+}
+
+@media only screen and (max-width: 500px) {
+   .canvasContainer,
+   .canvasContainer canvas {
+      width: 100vw;
+      height: calc(4 / 5 * 100vw);
+   }
+}
+
+.loadingBar {
+   position: absolute;
+   top: 10%;
+   left: 35%;
+   width: 30%;
+   height: 4%;
+   color: white;
+   padding: 2px 6px 4px 6px;
+}
+
+.loadingBar::before {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 0%;
+   content: '';
+   background: var(--color-primary);
+   z-index: 1;
+
+   -webkit-animation: 1.5s 0s 1 loading;
+   -moz-animation: 1.5s 0s 1 loading;
+   animation: 1.5s 0s 1 loading;
+
+   -webkit-animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   animation-fill-mode: forwards;
+}
+
+@keyframes loading {
+   50% {
+      width: 25%;
+   }
+   to {
+      width: 95%;
+   }
+}
+
+.loadingBar div {
+   z-index: 2;
+   position: relative;
+}
+
+.loadingBar::after {
+   position: absolute;
+   top: -4px;
+   left: -4px;
+   right: -4px;
+   bottom: -4px;
+   content: '';
+   border: 2px solid var(--color-primary);
+}

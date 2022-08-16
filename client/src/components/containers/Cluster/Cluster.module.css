@@ -1,0 +1,31 @@
+.cluster {
+   --cluster-gap: var(--main-spacing);
+
+   width: 100%;
+   margin: 0 auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: var(--cluster-gap);
+}
+
+@media screen and (max-width: 1050px) {
+   .cluster {
+      --cluster-gap: var(--secondary-spacing);
+      --cluster-item-size: calc((100% - var(--cluster-gap)) / 2);
+      max-width: 900px;
+   }
+}
+
+@media screen and (max-width: 725px) {
+   .cluster {
+      --cluster-item-size: 100%;
+      max-width: 488px;
+   }
+}
+
+@media screen and (max-width: 550px) {
+   .cluster {
+      max-width: 488px;
+   }
+}

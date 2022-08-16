@@ -1,0 +1,158 @@
+.imageContainer {
+   composes: imageContainer from '../../index.module.css';
+}
+
+.contentContainer {
+   composes: contentContainer from '../../index.module.css';
+}
+
+.center {
+   composes: center from '../../index.module.css';
+}
+
+.contentContainer__flexSection {
+   composes: contentContainer__flexSection from '../../index.module.css';
+}
+
+.contentContainer {
+   background: #d5d5d5;
+}
+
+.contentContainer h1 {
+   margin-bottom: 12px;
+}
+
+/* ----- main container (app.js) ----- */
+.networkContainer {
+   --button-size: 50px;
+   --button-gap: 12px;
+   --canvas-size: 112px;
+   display: flex;
+   gap: var(--button-gap);
+   justify-content: center;
+}
+
+/* ----- networkdisplay.js container ----- */
+.displayContainer {
+   display: flex;
+   gap: var(--button-gap);
+   width: calc(4 * var(--canvas-size) + 3 * var(--button-gap));
+   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 830px) {
+   .displayContainer {
+      display: none;
+   }
+}
+
+/* ----- input + output container (app.js) ----- */
+.interactContainer {
+   display: flex;
+   flex-direction: column;
+   gap: var(--button-gap);
+}
+
+/* ----- networkinput.js container ----- */
+.inputContainer {
+   display: flex;
+   gap: var(--button-gap);
+}
+
+.guessContainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: calc(4 * var(--button-size) + 3 * var(--button-gap));
+   height: 100%;
+}
+
+.guessContainer p {
+   margin: 0px;
+   padding: 0px;
+   padding-bottom: 6px;
+}
+
+.guessContainer .responseContainer {
+   display: flex;
+}
+
+.guessContainer .responseMessage {
+   padding: 20px;
+}
+
+.guessContainer .responseContainer div {
+   margin: 6px;
+   padding: 6px 12px;
+   background: #aaa;
+   border: 1px solid var(--ncsu-dark-gray);
+   width: 40px;
+   text-align: center;
+   transition: all 0.2s;
+   cursor: pointer;
+}
+.guessContainer .responseContainer div:hover {
+   background: #888;
+}
+
+/* ----- networkoutput.js container ----- */
+.outputContainer {
+   display: flex;
+   gap: var(--button-gap);
+   width: calc(4 * var(--button-size) + 3 * var(--button-gap));
+   flex-wrap: wrap;
+}
+
+.outputValue {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: var(--button-size);
+   height: var(--button-size);
+   padding: 4px;
+   box-sizing: border-box;
+}
+
+.numDisplay {
+   border-bottom: 1px solid var(--ncsu-dark-gray);
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.outputValue.green {
+   background: #7c7;
+}
+
+.outputValue.orange {
+   background: #fa0;
+}
+
+.outputValue.red {
+   background: #c77;
+}
+
+.outputValue.gray {
+   background: #aaa;
+}
+
+.outputValue.active {
+   cursor: pointer;
+   filter: brightness(100%);
+   transition: all 0.2s;
+}
+
+.outputValue.active:hover {
+   filter: brightness(70%);
+}
+
+.clearButton {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: calc(2 * var(--button-size) + var(--button-gap));
+   height: var(--button-size);
+   cursor: pointer;
+   background: #aaa;
+}

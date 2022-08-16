@@ -1,0 +1,47 @@
+/* ----- index.js ----- */
+.headerContainer {
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 20;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 40px 40px;
+   color: var(--color-white);
+}
+
+.headerContainer h1 {
+   margin: 0px;
+   padding: 0px;
+   font-size: 48px;
+   font-weight: 900;
+}
+
+.headerContainer h2 {
+   margin: 0px;
+   padding: 20px 0px;
+   font-size: 24px;
+   font-weight: 400;
+   padding-top: 6px;
+}
+
+@media screen and (min-width: 1921px) {
+   .headerContainer h1 {
+      font-size: 64px;
+   }
+   .headerContainer h2 {
+      font-size: 32px;
+   }
+}
+
+@media screen and (max-width: 460px) {
+   .headerContainer h1 {
+      font-size: 40px;
+   }
+   .headerContainer h2 {
+      font-size: 20px;
+   }
+}

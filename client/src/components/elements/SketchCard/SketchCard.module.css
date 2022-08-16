@@ -1,0 +1,195 @@
+/* ----- SketchCard ----- */
+.sketchCard {
+   --card-delay: 0s; /* 'n' timing */
+   --default-delay: 0.5s;
+   --card-animation: 1.5s;
+   --gap: 20px;
+   --sketch-background: repeating-linear-gradient(
+      45deg,
+      var(--color-primary) 0px,
+      var(--color-primary) 2px,
+      var(--color-white) 2px,
+      var(--color-white) 6px
+   );
+
+   position: relative;
+   box-sizing: border-box;
+   overflow: hidden;
+   color: var(--color-primary);
+   padding: 20px 12px 12px 20px;
+   border-radius: 12px;
+   max-width: 475px;
+   width: calc((100% - 2 * var(--gap)) / 3);
+   background: var(--sketch-background);
+   clip-path: polygon(-200% 0%, -100% 0%, 0% 100%, -100% 100%);
+}
+
+.sketchCard::before {
+   position: absolute;
+   top: -12px;
+   left: 12px;
+   right: 4px;
+   bottom: 12px;
+   content: '';
+   border-radius: 12px;
+   background: var(--color-white);
+}
+
+.sketchCard.active {
+   /* 0.5 + n */
+   --net-card-delay: calc(var(--card-delay) + var(--default-delay));
+
+   /* 0.5 + n + 2 = 2.5 + n */
+   animation: var(--card-animation) var(--net-card-delay) 1 sketch1;
+   -moz-animation: var(--card-animation) var(--net-card-delay) 1 sketch1;
+   -webkit-animation: var(--card-animation) var(--net-card-delay) 1 sketch1;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+
+   clip-path: polygon(-1500px 0px, -500px 0px, 0px 500px, -1000px 500px);
+}
+
+@keyframes sketch1 {
+   from {
+      clip-path: polygon(-1500px 0px, -500px 0px, 0px 500px, -1000px 500px);
+   }
+   to {
+      clip-path: polygon(-500px 0px, 500px 0px, 1000px 500px, 0px 500px);
+   }
+}
+
+.sketchCard h1 {
+   position: relative;
+   margin: 0;
+   padding: 0;
+   padding-bottom: 2px;
+   font-size: 24px;
+   border-bottom: 2px solid var(--color-primary);
+   text-align: center;
+}
+
+/* ----- SketchItem ----- */
+.sketchCard .sketchItem {
+   --item-delay: 0s; /* 'm' timing */
+   --item-animation: 0.5s;
+   box-sizing: border-box;
+   position: relative;
+   margin: 6px 0px;
+   background: var(--sketch-background);
+   border: 2px solid var(--color-primary);
+   overflow: hidden;
+}
+
+.sketchCard.active .sketchItem {
+   /* 0.5 + n + 2 + m = 2.5 + n + m */
+   --net-item-delay: calc(
+      var(--net-card-delay) + var(--card-animation) + var(--item-delay)
+   );
+
+   /* 1.5 + 2.5 + n + m = 4.0 + n + m */
+   animation: var(--item-animation) var(--net-item-delay) 1 sketch2;
+   -moz-animation: var(--item-animation) var(--net-item-delay) 1 sketch2;
+   -webkit-animation: var(--item-animation) var(--net-item-delay) 1 sketch2;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+
+   clip-path: polygon(
+      100% 0%,
+      calc(100% + 30px) 0%,
+      calc(100% + 60px) 100%,
+      calc(100% + 30px) 100%
+   );
+}
+
+@keyframes sketch2 {
+   from {
+      clip-path: polygon(
+         100% 0%,
+         calc(100% + 30px) 0%,
+         calc(100% + 60px) 100%,
+         calc(100% + 30px) 100%
+      );
+   }
+   to {
+      clip-path: polygon(
+         -30px 0%,
+         calc(100% + 30px) 0%,
+         calc(100% + 60px) 100%,
+         0px 100%
+      );
+   }
+}
+
+/* ----- SketchItem bar ----- */
+.sketchCard .sketchItem .sketchItemBar {
+   --itembar-delay: 0.125s; /* 'l' timing */
+   --itembar-animation: 0.5s;
+
+   background: var(--color-white);
+   border-right: 2px solid var(--color-primary);
+   white-space: nowrap;
+   text-overflow: '';
+   overflow: hidden;
+   margin: 0;
+   padding: 4px 6px;
+   font-weight: bold;
+   width: 0;
+   transition: width 1.5s;
+   visibility: hidden;
+}
+
+.sketchCard.active .sketchItem .sketchItemBar {
+   /* 2.5 + n + m + 1.5 + l = 4.0 + n + m + l */
+   --net-itembar-delay: calc(
+      var(--net-item-delay) + var(--item-animation) + var(--itembar-delay)
+   );
+
+   animation: var(--itembar-animation) var(--net-itembar-delay) 1 sketch3;
+   -moz-animation: var(--itembar-animation) var(--net-itembar-delay) 1 sketch3;
+   -webkit-animation: var(--itembar-animation) var(--net-itembar-delay) 1
+      sketch3;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+
+   visibility: hidden;
+}
+
+/* ----- mobile ----- */
+@keyframes sketch3 {
+   from {
+      visibility: visible;
+      width: 0%;
+   }
+   to {
+      visibility: visible;
+      width: var(--width);
+   }
+}
+
+.sketchCard:first-child .sketchItem:last-child {
+   border-radius: 0 0 6px 0;
+}
+
+@media only screen and (max-width: 1200px) {
+   .sketchCard {
+      width: calc((100% - var(--gap)) / 2);
+   }
+   .sketchCard:last-child .sketchItem:last-child {
+      border-radius: 0 0 6px 0;
+   }
+}
+
+@media only screen and (max-width: 750px) {
+   .sketchCard {
+      width: 100%;
+   }
+   .sketchCard .sketchItem:last-child {
+      border-radius: 0 0 6px 0;
+   }
+}

@@ -1,0 +1,28 @@
+.imageContainer {
+   composes: imageContainer from '../../index.module.css';
+}
+
+.contentContainer {
+   composes: contentContainer from '../../index.module.css';
+}
+
+.center {
+   composes: center from '../../index.module.css';
+}
+
+.contentContainer__flexSection {
+   composes: contentContainer__flexSection from '../../index.module.css';
+}
+
+.contentContainer a {
+   font-weight: bold;
+   color: var(--color-primary);
+}
+
+.contentContainer p {
+   margin: 6px 0;
+}
+
+.contentContainer h2 {
+   margin-top: 16px;
+}

@@ -1,0 +1,79 @@
+.formContainer {
+   --max-width: 800px;
+   min-width: min(calc(100% - 1.5rem), 430px);
+   max-width: var(--max-width);
+   padding: 0 0.75rem;
+   margin: 0 auto;
+}
+
+@media only screen and (max-width: 460px) {
+   .formContainer {
+      --max-width: calc(100vw - 1.5rem);
+   }
+}
+
+form {
+   display: grid;
+   grid-template-columns: 100px 1fr 1fr 100px;
+   grid-column-gap: 6px;
+   grid-row-gap: 6px;
+   max-width: var(--max-width);
+}
+
+.form__name {
+   grid-column-start: 1;
+   grid-column-end: 3;
+}
+
+.form__name input {
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.form__email {
+   grid-column-start: 3;
+   grid-column-end: 5;
+}
+
+.form__email input {
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.form__message {
+   grid-column-start: 1;
+   grid-column-end: 5;
+}
+
+.form__message textarea {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 4px;
+   width: 600px;
+   min-width: min(100%, 430px);
+   max-width: var(--max-width);
+   min-height: 5.75em;
+   max-height: 13.5em;
+}
+
+.form__name.inactive,
+.form__email.inactive,
+.form__message.inactive {
+   color: #757575;
+}
+
+.form__submit {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   margin: 0;
+   cursor: pointer;
+   padding: 8px 16px;
+   text-align: center;
+   background: #bbb;
+   border-radius: 3px;
+   transition: all 0.2s;
+}
+
+.form__submit:hover {
+   background: #aaa;
+}

@@ -1,0 +1,10 @@
+.buttonContainer {
+   --button-width: 146px;
+   position: relative;
+   cursor: pointer;
+   width: var(--button-width);
+   box-sizing: border-box;
+   text-align: center;
+   margin: 0 auto;
+   color: var(--color-primary);
+}

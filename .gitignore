@@ -1,0 +1,13 @@
+
+**/node_modules
+**/.env*
+
+client/build
+server/src/data/*
+logs
+
+# environment simlinks
+client/.eslintrc.json
+server/.eslintrc.json
+client/.prettierrc.json
+server/.prettierrc.json

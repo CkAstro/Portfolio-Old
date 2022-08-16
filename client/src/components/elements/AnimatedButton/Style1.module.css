@@ -1,0 +1,35 @@
+.buttonContainer {
+   composes: buttonContainer from './AnimatedButton.module.css';
+}
+
+.normalButton1 {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 8px 16px;
+   width: var(--button-width);
+   border: 2px solid var(--color-primary);
+   margin: auto;
+   box-sizing: border-box;
+}
+
+.hoverButton1 {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 8px 16px;
+   width: var(--button-width);
+   border: 2px solid var(--color-primary);
+   margin: auto;
+   background: var(--color-primary);
+   color: var(--color-white);
+   clip-path: polygon(-120% 0, -20% 0, 0% 100%, -100% 100%);
+   transition: all 0.5s;
+   box-sizing: border-box;
+}
+
+.hoverButton1.hover {
+   clip-path: polygon(-20% 0%, 100% 0%, 120% 100%, 0% 100%);
+}

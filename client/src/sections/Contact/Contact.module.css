@@ -1,0 +1,76 @@
+.headerContainer {
+   margin: 0 0 40px 0;
+   text-align: center;
+}
+
+h1.style1 {
+   color: #1e1e1e;
+   position: relative;
+   margin: 0;
+   font-size: 36px;
+}
+
+.footer {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 25%;
+   content: '';
+   background: var(--color-black);
+   color: var(--color-white);
+   text-align: center;
+   font-weight: 900;
+   padding: 20px;
+}
+
+.footer .linkContainer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 12px;
+}
+
+.footer div svg {
+   margin-top: 6px;
+   cursor: pointer;
+   transition: fill 0.2s;
+}
+
+.footer div svg:hover {
+   fill: var(--color-secondary);
+}
+
+.footer .resume {
+   display: block;
+   margin: 6px;
+}
+
+.footer .resume a {
+   text-decoration: none;
+   color: var(--color-white);
+   transition: color 0.2s;
+}
+
+.footer .resume a:hover {
+   color: var(--color-secondary);
+}
+
+.footer .copyright {
+   position: relative;
+   margin: 50px auto 0 auto;
+}
+
+@media only screen and (max-width: 500px) {
+   .footer {
+      height: 20%;
+      font-size: 14px;
+      padding: 12px;
+   }
+   .footer .resume {
+      margin: 0px;
+   }
+   .footer .copyright {
+      margin: 12px auto;
+   }
+}

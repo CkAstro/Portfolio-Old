@@ -1,0 +1,9 @@
+.contentPage {
+   display: flex;
+   flex-direction: column;
+   width: var(--content-width);
+   max-width: 1000px;
+   height: 100%;
+   justify-content: flex-start;
+   align-items: center;
+}

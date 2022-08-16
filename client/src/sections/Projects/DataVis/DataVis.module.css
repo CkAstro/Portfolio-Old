@@ -1,0 +1,11 @@
+.imageContainer {
+   composes: imageContainer from '../../index.module.css';
+}
+
+.contentContainer {
+   composes: contentContainer from '../../index.module.css';
+}
+
+.contentContainer__flexSection {
+   composes: contentContainer__flexSection from '../../index.module.css';
+}

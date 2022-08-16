@@ -1,0 +1,93 @@
+body,
+html {
+   margin: 0px;
+   padding: 0px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-family: 'Roboto', Arial, Helvetica, sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   color: var(--color-black);
+   width: 100vw;
+   height: 100vh;
+}
+
+a {
+   text-decoration: none;
+   color: var(--color-black);
+   margin: 0;
+   padding: 0;
+}
+
+/* ----- globals ----- */
+:root {
+   --color-primary: #113377;
+   --color-secondary: #568ea3;
+   --color-white: #fbf9ff;
+   --color-black: #1e1e1e;
+
+   --color-dark-red: #900;
+   --color-light-red: #c00;
+   --color-dark-gray: #333;
+   --color-charcoal: #404e5c;
+
+   --content-ideal-width: 1220;
+   --content-min-width: 330px;
+   --content-max-width: calc(1px * var(--content-ideal-width));
+   --current-width: 100vw;
+   --content-width: clamp(
+      var(--content-min-width),
+      var(--current-width),
+      var(--content-max-width)
+   );
+
+   --main-spacing: 20px;
+   --secondary-spacing: 12px;
+   --main-padding: 20px;
+}
+
+/* global border box */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* remove text selection */
+.noselect {
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+/* remove scrollbar */
+.noscrollbar {
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+}
+
+.noscrollbar::-webkit-scrollbar {
+   display: none;
+}
+
+/* ----- layout troubleshooting (uncomment to view all borders) ----- */
+/* * {
+   background: #000 !important;
+   color: #0f0 !important;
+   outline: solid #f00 1px !important;
+} */
+
+/* ----- content containers ----- */
+.mainContainer {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden auto;
+}
+
+.contentContainer {
+   width: var(--content-width);
+   margin: 0 auto;
+}

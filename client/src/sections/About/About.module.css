@@ -1,0 +1,87 @@
+.aboutContainer {
+   --color-percentContainer: #fbf9ff;
+
+   color: var(--color-white);
+}
+
+.introContainer {
+   text-align: center;
+   margin-bottom: 50px;
+   color: var(--color-black);
+}
+
+.introContainer h1 {
+   font-weight: 100;
+   font-size: 40px;
+   transform: translateX(500px);
+   transition: transform 1s;
+}
+
+.introContainer.active h1 {
+   transform: translateX(0px);
+}
+
+.introContainer p {
+   visibility: hidden;
+}
+
+.introContainer.active p {
+   margin: 0;
+   padding: 2px 12px;
+   font-size: 20px;
+   opacity: 0;
+   visibility: hidden;
+   animation: 0.5s var(--delay) 1 reveal;
+   -moz-animation: 0.5s var(--delay) 1 reveal;
+   -webkit-animation: 0.5s var(--delay) 1 reveal;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+}
+
+.introContainer .test {
+   padding: 2px 20px;
+}
+
+.introContainer .test p {
+   display: inline;
+   padding: 0 3px;
+}
+
+@keyframes reveal {
+   from {
+      opacity: 0;
+      visibility: hidden;
+   }
+   to {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
+.flexColumns {
+   --gap: 20px;
+   box-sizing: border-box;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: var(--gap);
+   padding: 0 var(--gap);
+}
+
+.introContainer .linkIcon {
+   opacity: 0;
+   visibility: hidden;
+   margin-top: 20px;
+}
+
+.introContainer.active .linkIcon {
+   animation: 0.5s var(--delay) 1 reveal;
+   -moz-animation: 0.5s var(--delay) 1 reveal;
+   -webkit-animation: 0.5s var(--delay) 1 reveal;
+
+   animation-fill-mode: forwards;
+   -moz-animation-fill-mode: forwards;
+   -webkit-animation-fill-mode: forwards;
+}

@@ -1,0 +1,66 @@
+.container {
+   display: flex;
+   gap: 0.5rem;
+   width: 100%;
+}
+
+.container__header {
+   width: 25%;
+   flex: 0 1 auto;
+}
+
+.container__group {
+   flex-grow: 1;
+   display: flex;
+}
+
+.button,
+.button__header {
+   height: 2.5rem;
+   border: 1px solid black;
+   position: relative;
+}
+
+.button {
+   background: #baa;
+   flex-grow: 1;
+   cursor: pointer;
+   filter: brightness(100%);
+   transition: filter 0.2s;
+}
+
+.button__header {
+   background: #090;
+}
+
+.button:hover {
+   filter: brightness(80%);
+}
+
+.button.active {
+   filter: brightness(70%);
+   transition: filter 0s;
+}
+
+/* center text while keeping consistent size */
+.button__content,
+.button__header__content{
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* remove double borders for buttons and groups of ButtonGroups */
+.container:not(:last-child) .button,
+.container:not(:last-child) .button__header {
+   border-bottom: none;
+}
+
+.button:not(:last-child) {
+   border-right: none;
+}

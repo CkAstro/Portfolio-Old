@@ -1,0 +1,11 @@
+.imageContainer {
+   composes: imageContainer from '../../index.module.css';
+}
+
+.contentContainer {
+   composes: contentContainer from '../../index.module.css';
+}
+
+.center {
+   composes: center from '../../index.module.css';
+}

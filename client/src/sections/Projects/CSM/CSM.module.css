@@ -1,0 +1,79 @@
+.imageContainer {
+   composes: imageContainer from '../../index.module.css';
+}
+
+.contentContainer {
+   composes: contentContainer from '../../index.module.css';
+}
+
+.center {
+   composes: center from '../../index.module.css';
+}
+
+.buttonContainer {
+   width: 600px;
+   margin: auto;
+   box-sizing: border-box;
+}
+
+.canvasGrid {
+   display: grid;
+   grid-template-columns: 375px 225px;
+   grid-template-rows: 1fr 1fr;
+   width: 600px;
+   height: 450px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.canvasGrid .leftGrid {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   width: 100%;
+   height: 100%;
+}
+
+.canvasGrid .rightGrid {
+   grid-row-start: 1;
+   grid-row-end: 3;
+   grid-column-start: 2;
+   grid-column-end: 3;
+   width: 100%;
+   height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+   .contentContainer {
+      padding: 30px 0;
+   }
+   .contentContainer h1 {
+      margin: 0 30px;
+   }
+   .contentContainer p {
+      padding: 0 30px;
+   }
+   .buttonContainer {
+      width: var(--content-width);
+      padding: 0 12px;
+   }
+
+   .canvasGrid {
+      grid-template-columns: 300px;
+      /* grid-template-rows: auto auto auto; */
+      width: 300px;
+      height: 800px;
+   }
+
+   .canvasGrid .rightGrid {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      height: 450px;
+   }
+
+   .canvasGrid .leftGrid {
+      width: 100%;
+      height: 175px;
+   }
+}

@@ -1,0 +1,101 @@
+.buttonContainer {
+   composes: buttonContainer from './AnimatedButton.module.css';
+}
+
+.buttonContainer__default {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 8px 16px;
+   width: var(--button-width);
+   border: 2px solid var(--color-primary);
+   margin: auto;
+   border-radius: 16px;
+   box-sizing: border-box;
+}
+
+/* ----- layer 1 (background) ----- */
+.buttonContainer__layer1 {
+   position: absolute;
+   border-radius: 16px;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 8px 16px;
+   width: var(--button-width);
+   border: 2px solid var(--color-primary);
+   margin: auto;
+   background: var(--color-secondary);
+   color: var(--color-white);
+   clip-path: circle(25% at -25% 50%);
+   transition: all 1s;
+   transition-delay: 0.25s;
+   box-sizing: border-box;
+}
+
+.buttonContainer__layer1.mouseOver {
+   clip-path: circle(25% at 100% 50%);
+   transition-delay: 0s;
+}
+
+.buttonContainer__layer1-cover {
+   position: absolute;
+   border-radius: 16px;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 8px 16px;
+   width: var(--button-width);
+   border: 2px solid var(--color-primary);
+   margin: auto;
+   background: var(--color-secondary);
+   color: var(--color-white);
+   clip-path: polygon(0% 0%, -25% 0%, -25% 100%, 0% 100%);
+   transition: all 1s;
+   transition-delay: 0.25s;
+   box-sizing: border-box;
+}
+
+.buttonContainer__layer1-cover.mouseOver {
+   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+   transition-delay: 0s;
+}
+
+/* ----- layer 2 (arrow) ----- */
+.buttonContainer__layer2 {
+   position: absolute;
+   border-radius: 16px;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 8px 16px;
+   width: var(--button-width);
+   border: 2px solid var(--color-primary);
+   margin: auto;
+   background: var(--color-primary);
+   color: var(--color-white);
+   clip-path: polygon(
+      -200% 20%,
+      -140% 20%,
+      -140% 0%,
+      -100% 50%,
+      -140% 100%,
+      -140% 80%,
+      -200% 80%
+   );
+   transition: all 1.5s;
+   box-sizing: border-box;
+}
+
+.buttonContainer__layer2.mouseOver {
+   clip-path: polygon(
+      0% 20%,
+      110% 20%,
+      110% 0%,
+      150% 50%,
+      110% 100%,
+      110% 80%,
+      0% 80%
+   );
+}
