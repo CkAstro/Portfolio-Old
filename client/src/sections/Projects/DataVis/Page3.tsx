@@ -21,7 +21,7 @@ const Page = () => (
          <div>
             <img
                alt="camera options"
-               src={require('assets/img/split_camera_1.webp')}
+               src={require('@/assets/img/split_camera_1.webp')}
             />
          </div>
       </div>
@@ -42,7 +42,7 @@ const Page = () => (
          <div>
             <img
                alt="compare mode"
-               src={require('assets/img/split_camera_2.webp')}
+               src={require('@/assets/img/split_camera_2.webp')}
             />
          </div>
       </div>
@@ -64,7 +64,7 @@ const Page = () => (
          <div>
             <img
                alt="link mode"
-               src={require('assets/img/split_camera_3.webp')}
+               src={require('@/assets/img/split_camera_3.webp')}
             />
          </div>
       </div>

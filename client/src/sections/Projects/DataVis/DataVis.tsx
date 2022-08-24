@@ -16,13 +16,13 @@ const datavis = {
       </span>
    ),
    components: 'WebGL / GLSL / React / Node / REST',
-   image: require('assets/img/datavis_display.webp'),
+   image: require('@/assets/img/datavis_display.webp'),
    description: 'Upload and view volumetric scalar data.',
    link: 'https://datavis.chriskolb.dev',
    pages: [
       <ContentPage>
          <div className={css.imageContainer}>
-            <img alt="DataVis" src={require('assets/img/datavis.webp')} />
+            <img alt="DataVis" src={require('@/assets/img/datavis.webp')} />
          </div>
          <div className={`${css.contentContainer}`}>
             <h1>

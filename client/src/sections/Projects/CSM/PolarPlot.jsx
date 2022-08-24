@@ -1,4 +1,4 @@
-import { InteractiveCanvas } from 'components/elements';
+import { InteractiveCanvas } from '@/components/elements';
 
 const pi = Math.PI;
 const _boxSize = 4; // for crosshairs
@@ -181,7 +181,7 @@ const drawPolarPlot = (ctx, data) => {
    drawGrid(ctx, data);
 };
 
-function PolarPlot({ data, setDataPoint }) {
+const PolarPlot = ({ data, setDataPoint }) => {
    const updateDataPoint = (ctx, mouseInfo, dataContainer) => {
       if (!dataContainer || !mouseInfo.isActive) return;
       const { top, left } = mouseInfo.rect;
@@ -229,6 +229,6 @@ function PolarPlot({ data, setDataPoint }) {
          setStyle={{ width: '100%', height: '100%' }}
       />
    );
-}
+};
 
 export default PolarPlot;

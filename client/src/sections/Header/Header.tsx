@@ -2,7 +2,7 @@ import { useMousePosition } from '@/contexts';
 import NucleoDisplay from '@/components/NucleoDisplay';
 import css from './Header.module.css';
 
-function Header() {
+export const Header = () => {
    const { setMousePosition } = useMousePosition();
 
    // capture mouse movement for spotlight and hover effects in NucleoDisplay
@@ -24,6 +24,4 @@ function Header() {
          <NucleoDisplay />
       </div>
    );
-}
-
-export default Header;
+};

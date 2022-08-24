@@ -20,7 +20,7 @@ const Page = () => (
          <div>
             <img
                alt="session tools"
-               src={require('assets/img/sessions_1.webp')}
+               src={require('@/assets/img/sessions_1.webp')}
             />
          </div>
       </div>
@@ -41,7 +41,7 @@ const Page = () => (
          <div>
             <img
                alt="saving a session"
-               src={require('assets/img/sessions_2.webp')}
+               src={require('@/assets/img/sessions_2.webp')}
             />
          </div>
       </div>
@@ -64,7 +64,7 @@ const Page = () => (
          <div>
             <img
                alt="loading a session"
-               src={require('assets/img/sessions_3.webp')}
+               src={require('@/assets/img/sessions_3.webp')}
             />
          </div>
       </div>

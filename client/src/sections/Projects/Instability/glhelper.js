@@ -1,8 +1,8 @@
 // NOTE: this is a custom gl helper implementation
 //    - renderScene(...) expects image number to be set in 'scene.image'
 //    - majority of scene rendering stuff needs to be moved to Renderables
-import { Renderable } from 'utils';
 import { mat4 } from 'gl-matrix';
+import { Renderable } from '@/utils';
 
 class GLHelper {
    constructor() {

@@ -1,4 +1,4 @@
-import { InteractiveCanvas } from 'components/elements';
+import { InteractiveCanvas } from '@/components/elements';
 
 const _xTickCount = 6;
 const _boxSize = 4;
@@ -194,7 +194,7 @@ const drawRadialPlot = (ctx, data) => {
    drawAxes(ctx, origin, data, lengthX, lengthY);
 };
 
-function RadialPlot({ data, setDataPoint }) {
+const RadialPlot = ({ data, setDataPoint }) => {
    const updateDataPoint = (ctx, mouseInfo, dataContainer) => {
       if (!dataContainer || !mouseInfo.isActive) return;
       const { top, left } = mouseInfo.rect;
@@ -225,6 +225,6 @@ function RadialPlot({ data, setDataPoint }) {
          setStyle={{ width: '100%', height: '100%' }}
       />
    );
-}
+};
 
 export default RadialPlot;

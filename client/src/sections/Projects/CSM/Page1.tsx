@@ -1,8 +1,8 @@
 import App from './App';
-import style from './csm.module.css';
+import css from './csm.module.css';
 
 const Page = () => (
-   <div className={style.contentContainer}>
+   <div className={css.contentContainer}>
       <h1 style={{ fontWeight: '100' }}>
          Circumstellar Medium{' '}
          <span style={{ fontWeight: '700' }}>Research Data</span>

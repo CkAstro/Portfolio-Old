@@ -31,7 +31,7 @@ function Page() {
                {/* these images are manually sized as compressing smaller image makes filesize larger... */}
                <img
                   alt="circumstellar medium"
-                  src={require('assets/img/emission_csm.webp')}
+                  src={require('@/assets/img/emission_csm.webp')}
                   width="350px"
                />
             </div>
@@ -41,7 +41,7 @@ function Page() {
             <div>
                <img
                   alt="supernova explosion"
-                  src={require('assets/img/emission_nova.webp')}
+                  src={require('@/assets/img/emission_nova.webp')}
                   width="350px"
                />
             </div>
@@ -80,7 +80,7 @@ function Page() {
             <div>
                <img
                   alt="light emission"
-                  src={require('assets/img/emission_light.webp')}
+                  src={require('@/assets/img/emission_light.webp')}
                   width="350px"
                />
             </div>
@@ -101,7 +101,7 @@ function Page() {
             <div>
                <img
                   alt="observing the light"
-                  src={require('assets/img/emission_obs1.webp')}
+                  src={require('@/assets/img/emission_obs1.webp')}
                   width="350px"
                />
             </div>
@@ -111,7 +111,7 @@ function Page() {
             <div>
                <img
                   alt="observing the light (new angle)"
-                  src={require('assets/img/emission_obs2.webp')}
+                  src={require('@/assets/img/emission_obs2.webp')}
                   width="350px"
                />
             </div>

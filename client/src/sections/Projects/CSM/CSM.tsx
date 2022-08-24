@@ -11,7 +11,7 @@ const csm = {
       </span>
    ),
    components: 'HTML5 Canvas / REST / Post-Processing',
-   image: require('assets/img/csm.webp'),
+   image: require('@/assets/img/csm.webp'),
    description:
       'Select from 36 CSM research models and view + export data in detail.',
    pages: [

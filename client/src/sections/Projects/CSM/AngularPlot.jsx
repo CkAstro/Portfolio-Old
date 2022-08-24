@@ -4,7 +4,7 @@ const _xTickCount = 6;
 const _boxSize = 4;
 const _mainLineWidth = 2;
 
-const resetContext = (ctx: any) => {
+const resetContext = (ctx) => {
    ctx.strokeStyle = 'black';
    ctx.lineWidth = _mainLineWidth;
    ctx.setLineDash([]);
@@ -194,7 +194,7 @@ const drawRadialPlot = (ctx, data) => {
    drawAxes(ctx, origin, data, lengthX, lengthY);
 };
 
-function AngularPlot({ data, setDataPoint }) {
+const AngularPlot = ({ data, setDataPoint }) => {
    const updateDataPoint = (ctx, mouseInfo, dataContainer) => {
       if (!dataContainer || !mouseInfo.isActive) return;
       const { top, left } = mouseInfo.rect;
@@ -225,6 +225,6 @@ function AngularPlot({ data, setDataPoint }) {
          setStyle={{ width: '100%', height: '100%' }}
       />
    );
-}
+};
 
 export default AngularPlot;

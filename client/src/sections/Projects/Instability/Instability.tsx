@@ -5,16 +5,15 @@ import { PageLoading } from '@/components/elements';
 const Page1 = lazy(() => import('./Page1'));
 const Page2 = lazy(() => import('./Page2'));
 
-const emission = {
+const instability = {
    title: (
       <span style={{ fontWeight: '400' }}>
-         Supernova <span style={{ fontWeight: '900' }}>Emission</span>
+         Fluid <span style={{ fontWeight: '900' }}>Instabilities</span>
       </span>
    ),
-   components: 'WebGL / GLSL / Python / FORTRAN',
-   image: require('@/assets/img/emission.webp'),
-   description:
-      'Interact with a supernova simulation and see how emission changes with the view.',
+   components: 'React / WebGL / Fetch API',
+   image: require('@/assets/img/instability.webp'),
+   description: 'Watch a fluid instability evolve in full 3D.',
    pages: [
       <ContentPage>
          <Suspense fallback={<PageLoading />}>
@@ -29,4 +28,4 @@ const emission = {
    ],
 };
 
-export const Emission = () => <ClusterItem info={emission} />;
+export const Instability = () => <ClusterItem info={instability} />;

@@ -25,7 +25,7 @@ const Page = () => (
          <div>
             <img
                alt="create items"
-               src={require('assets/img/create_items.webp')}
+               src={require('@/assets/img/create_items.webp')}
             />
          </div>
       </div>
@@ -62,7 +62,7 @@ const Page = () => (
          <div>
             <img
                alt="control items"
-               src={require('assets/img/control_items.webp')}
+               src={require('@/assets/img/control_items.webp')}
             />
          </div>
       </div>

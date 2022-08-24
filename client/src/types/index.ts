@@ -74,7 +74,7 @@ export interface ClusterItemProps {
    title: JSX.Element | string;
    components: string;
    image: any;
-   description: string;
+   description: JSX.Element | string;
    pages: ModalContent;
 }
 
@@ -86,4 +86,22 @@ export interface ClusterItemInfo {
 export interface Point {
    x: number;
    y: number;
+}
+
+// WebGL stuff
+export interface ShaderProgram {
+   program: any;
+   attribLocations: {
+      vertexPosition: any;
+   };
+   uniformLocations: {
+      projectionMatrix: any;
+      modelViewMatrix: any;
+      resolution: any;
+      volumeData: any;
+      colormap: any;
+      eyePos: any;
+      hideCSM?: any;
+      nu?: any;
+   };
 }
